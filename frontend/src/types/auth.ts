@@ -1,10 +1,10 @@
-export interface User {
-    id: number
-    email: string
-    name: string
+export type User = {
+  id: number
+  email: string
+  name: string
 }
 
-export interface AuthResponse {
-    token: string
-    user: User 
+export type AuthResponse = {
+  token: string
+  user: User
 }

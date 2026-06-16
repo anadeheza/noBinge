@@ -6,9 +6,10 @@ import { useAuth } from '../context/AuthContext'
 import type { AuthResponse } from '../types/auth'
 import '../styles/auth.css'
 
-export default function LoginPage() {
+export default function RegisterPage() {
   const { login } = useAuth()
   const navigate = useNavigate()
+  const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -17,9 +18,13 @@ export default function LoginPage() {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
     setError('')
+    if (password.length < 6) {
+      setError('Password must be at least 6 characters long')
+      return
+    }
     setLoading(true)
     try {
-      const data: AuthResponse = await api.post('/auth/login', { email, password })
+      const data: AuthResponse = await api.post('/auth/register', { name, email, password })
       login(data.token, data.user)
       navigate('/dashboard')
     } catch (err: any) {
@@ -37,9 +42,21 @@ export default function LoginPage() {
         </div>
 
         <form onSubmit={handleSubmit} className="auth-form">
-          <h2>Log in</h2>
+          <h2>Sign up</h2>
 
           {error && <p className="auth-error">{error}</p>}
+
+          <div className="form-group">
+            <label htmlFor="name">Name</label>
+            <input
+              id="name"
+              type="text"
+              value={name}
+              onChange={e => setName(e.target.value)}
+              placeholder="your name"
+              required
+            />
+          </div>
 
           <div className="form-group">
             <label htmlFor="email">Email</label>
@@ -60,18 +77,18 @@ export default function LoginPage() {
               type="password"
               value={password}
               onChange={e => setPassword(e.target.value)}
-              placeholder="••••••••"
+              placeholder=" ****** "
               required
             />
           </div>
 
           <button type="submit" className="auth-btn" disabled={loading}>
-            {loading ? 'Loging in...' : 'Log in'}
+            {loading ? 'Creating account...' : 'Sign up'}
           </button>
         </form>
 
         <p className="auth-switch">
-          Are you new? <Link to="/register">Sign up</Link>
+          Already have an account? <Link to="/login">Log in</Link>
         </p>
       </div>
     </div>

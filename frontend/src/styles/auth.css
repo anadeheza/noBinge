@@ -1,0 +1,137 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    height: 100%;
+    width: 100%;
+    background: #332512;
+    background: linear-gradient(to bottom right, #cb8c49, #332512);
+    overflow: hidden;
+
+}
+
+#root {
+    height: 100%;
+    width: 100%;
+}
+
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    margin: 0;
+}
+
+.auth-card {
+    background: #ffffffd7;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 420px;
+    backdrop-filter: blur(10px);
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.auth-logo {
+    font-size: 1.8rem;
+    color: #8e631e;
+    font-weight: 700;
+}
+
+.auth-subtitle {
+    color: #888;
+    margin-top: 0.25rem;
+    font-size: 0.9rem;
+}
+
+.auth-form h2 {
+    font-size: 1.3rem;
+    color: #774c2b;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    color: #b18d75;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid #ddd;
+    font-size: 0.95rem;
+    transition: border-color 0.2s;
+    outline: none;
+    background: #906d547c;
+    color: #774c2b;
+}
+
+.form-group input:focus {
+    border-color: #bb9a66;
+}
+
+.auth-btn {
+    width: 100%;
+    padding: 0.85rem;
+    background: #a87c34;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background 0.2s;
+}
+
+.auth-btn:hover:not(:disabled) {
+    background: #dcb882;
+    color: #8e631e;
+}
+
+.auth-btn:disabled {
+    background: #d6cba5;
+    cursor: not-allowed;
+}
+
+.auth-error {
+    background: #fdecea;
+    color: #c66728;
+    padding: 0.75rem 1rem;
+    font-size: 0.88rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid #ef9f50;
+}
+
+.auth-switch {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.auth-switch a {
+    color: #7d652e;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-switch a:hover {
+    text-decoration: underline;
+}
