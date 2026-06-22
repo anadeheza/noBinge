@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.press-start-2p-regular {
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,16 +14,15 @@
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
     height: 100%;
     width: 100%;
-    background: #332512;
-    background: linear-gradient(to bottom right, #cb8c49, #332512);
+    background: #261c0d;
     overflow: hidden;
-
 }
 
 #root {
+    font-family: "Press Start 2P", system-ui;
+
     height: 100%;
     width: 100%;
 }
@@ -42,18 +50,15 @@ body {
 }
 
 .auth-logo {
+    font-family: "Press Start 2P", system-ui;
+
     font-size: 1.8rem;
     color: #8e631e;
     font-weight: 700;
 }
 
-.auth-subtitle {
-    color: #888;
-    margin-top: 0.25rem;
-    font-size: 0.9rem;
-}
-
 .auth-form h2 {
+    font-family: "Press Start 2P", system-ui;
     font-size: 1.3rem;
     color: #774c2b;
     margin-bottom: 1.5rem;

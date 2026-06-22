@@ -1,0 +1,208 @@
+body {
+    background-color: #dfd3c3;
+    margin: 0;
+    overflow-y: auto !important;
+    height: auto !important;
+    min-height: 100vh;
+}
+
+.dashboard-wrapper {
+    padding: 32px;
+    width: 1200px;
+    margin: 0 auto;
+    font-family: system-ui, sans-serif;
+    color: #3e2723;
+    box-sizing: border-box;
+}
+
+.dash-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+    border-bottom: 4px dashed #8d6e63;
+    padding-bottom: 24px;
+}
+
+.brand {
+    flex: 1;
+}
+
+.dash-title {
+    font-family: "Press Start 2P", monospace;
+    font-size: 24px;
+    color: #2e4f3a;
+    margin: 0;
+    line-height: 36px;
+}
+
+.dash-subtitle {
+    margin: 0;
+    font-size: 14px;
+    font-style: italic;
+    color: #5d4037;
+}
+
+.logout-btn {
+    font-family: "Press Start 2P", monospace;
+    font-size: 12px;
+    padding: 12px 16px;
+    cursor: pointer;
+    background-color: #a64444;
+    color: #ffffff;
+    border: 4px solid #3e2723;
+    box-shadow: -4px 4px 0px #3e2723;
+    transition: all 0.1s;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.logout-btn:hover {
+    background-color: #953f3f;
+    transform: translate(2px, -2px);
+}
+
+.widget-grid {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin: 0 auto;
+    column-gap: 150px;
+    row-gap: 50px;
+    justify-items: center;
+    padding-bottom: 60px;
+    min-width: 1000px;
+}
+
+.widget-card {
+    box-sizing: border-box;
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    background-color: #f4ebd0;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.1s ease;
+}
+
+.widget-icon {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    transition: all 1s ease;
+    border-radius: 50%;
+    
+    image-rendering: pixelated; 
+    image-rendering: crisp-edges;
+}
+
+.widget-card:hover .widget-icon {
+    transform: rotate(360deg);
+}
+
+.music-drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 999;
+}
+.music-drawer-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.music-drawer {
+    position: fixed;
+    top: 0;
+    right: -400px; 
+    width: 360px;
+    height: 100vh;
+    background-color: #f4ebd0;
+    border-left: 6px solid #3e2723;
+    box-shadow: -10px 0px 0px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.music-drawer.open {
+    right: 0;
+}
+
+.drawer-header {
+    background-color: #2e4f3a;
+    color: #f4ebd0;
+    padding: 24px;
+    border-bottom: 4px solid #3e2723;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.drawer-header h3 {
+    font-family: "Press Start 2P", monospace;
+    font-size: 14px;
+    margin: 0;
+}
+
+.close-drawer-btn {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 32px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.drawer-content {
+    padding: 32px;
+    color: #3e2723;
+    flex-grow: 1;
+    overflow-y: auto;
+    font-size: 14px;
+}
+
+@media (max-width: 550px) {
+    .dash-header {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+    }
+
+    .widget-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .music-drawer {
+        width: 100%;
+        height: 400px;
+        bottom: -400px;
+        top: auto;
+        right: 0;
+        border-left: none;
+        border-top: 6px solid #3e2723;
+        transition: bottom 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .music-drawer.open {
+        bottom: 0;
+    }
+}
+
+@media (min-width: 551px) {
+    .widget-grid {
+        max-width: 500px;
+        grid-template-columns: repeat(2, 200px);
+    }
+}
