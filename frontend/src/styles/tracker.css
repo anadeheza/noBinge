@@ -1,0 +1,152 @@
+.mp { 
+    padding: 32px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
+
+.mp-title { 
+    font-size: 24px; 
+    color: #492b00;
+    margin-bottom: 24px; 
+    font-weight: 700; 
+}
+
+.mp-layout { 
+    display: flex; 
+    gap: 32px; 
+    align-items: flex-start; 
+    flex-wrap: wrap; 
+    max-width: 900px; 
+    width: 100%; 
+}
+
+.mp-left { 
+    background: white; 
+    padding: 20px; 
+    min-width: 260px; 
+    flex-shrink: 0; 
+    border: 0.5px solid #492300; 
+}
+
+.mp-right { 
+    flex: 1; 
+    background: white; 
+    padding: 25px; 
+    min-width: 280px; 
+    border: 0.5px solid #492300; 
+}
+
+.mp-date { 
+    font-size: 16px; 
+    color: #555;
+    margin-bottom: 18px; 
+    font-weight: 600; 
+}
+
+.mp-section-label { 
+    font-size: 13px; 
+    color: #666; 
+    margin-bottom: 8px; 
+}
+
+.meal-slot { 
+    margin-bottom: 18px; 
+}
+
+.meal-slot-title { 
+    font-size: 14px; 
+    font-weight: 600; 
+    color: #492b00; 
+    margin-bottom: 6px; 
+    display: flex; 
+    align-items: center; 
+    gap: 6px; 
+}
+
+.meal-slot-title span { 
+    font-size: 16px; 
+}
+
+.meal-input { 
+    width: 100%; 
+    padding: 10px 12px; 
+    border: 2px dashed transparent; 
+    background: #b3a7a2a8; 
+    font-size: 14px; 
+    color: #492300; 
+    outline: none; 
+    font-family: inherit;
+    resize: none; 
+}
+
+.meal-input:focus { 
+    border-color: #785f4f; 
+}
+
+.summary-row { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 8px 0; 
+    border-bottom: 0.5px dashed #c4b4a8; 
+    font-size: 14px; 
+    color: #555; 
+}
+
+.summary-row:last-child { 
+    border-bottom: none; 
+}
+
+.summary-dot { 
+    font-size: 16px; 
+}
+
+.save-btn { 
+    margin-top: 16px; 
+    width: 100%; 
+    padding: 13px; 
+    background: #492b00; 
+    color: white; 
+    border: none; 
+    font-size: 16px; 
+    font-weight: 600; 
+    cursor: pointer; 
+}
+
+.water-row { 
+    display: flex; 
+    gap: 8px; 
+    align-items: center; 
+    margin-bottom: 18px; 
+}
+
+.water-btn { 
+    width: 32px; 
+    height: 32px; 
+    border: 1px solid #492b00; 
+    background: none; 
+    color: #492b00; 
+    font-size: 18px; 
+    cursor: pointer; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    border-radius: 50%; 
+}
+
+.water-count { 
+    font-size: 14px; 
+    color: #492b00; 
+    font-weight: 600; 
+    min-width: 80px; 
+}
+
+
+.glass { 
+    font-size: 18px; opacity: 0.3; 
+}
+
+.glass.filled { 
+    opacity: 1; 
+}

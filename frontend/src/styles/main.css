@@ -45,8 +45,8 @@ body {
 
 .logout-btn {
     font-family: "Press Start 2P", monospace;
-    font-size: 12px;
-    padding: 12px 16px;
+    font-size: 11px;
+    padding: 10px 10px;
     cursor: pointer;
     background-color: #a64444;
     color: #ffffff;

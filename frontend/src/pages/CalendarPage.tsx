@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { notesService } from '../services/notesService'
 import type { DailyNote, MonthSummary } from '../types/notes'
 import '../styles/calendar.css'
+import { Link } from 'react-router-dom'
 
 const MOODS = [
   { value: 1, emoji: '🍂', label: 'Horribly' },
@@ -35,18 +36,23 @@ export default function CalendarPage() {
   const [saved, setSaved] = useState(false)
 
   const loadMonthSummary = useCallback(async () => {
-    const data = await notesService.getByMonth(currentYear, currentMonth)
-    setMonthSummary(data)
+    try {
+      const data = await notesService.getByMonth(currentYear, currentMonth)
+      setMonthSummary(data)
+    } catch (e) {
+    }
   }, [currentYear, currentMonth])
 
   const loadNote = useCallback(async () => {
-    const data = await notesService.getByDate(selectedDate)
-    setNote(data)
-    setContent(data?.content ?? '')
-    setMood(data?.mood ?? 3)
-    setSaved(false)
+    try {
+      const data = await notesService.getByDate(selectedDate)
+      setNote(data)
+      setContent(data?.content ?? '')
+      setMood(data?.mood ?? 3)
+      setSaved(false)
+    } catch (e) {
+    }
   }, [selectedDate])
-
   useEffect(() => { loadMonthSummary() }, [loadMonthSummary])
   useEffect(() => { loadNote() }, [loadNote])
 
@@ -91,10 +97,12 @@ export default function CalendarPage() {
   return (
     <div className="calendar-page">
       <h2 className="calendar-title">Diaryᝰ🖊</h2>
-
+      <Link to="/dashboard" className="home-btn" aria-label="Home">
+        🏠︎
+      </Link>
+      
       <div className="calendar-layout">
 
-        {/* Mini calendario */}
         <div className="mini-calendar">
           <div className="cal-nav">
             <button onClick={prevMonth}>‹</button>
@@ -103,7 +111,7 @@ export default function CalendarPage() {
           </div>
 
           <div className="cal-grid">
-            {['D', 'L', 'M', 'X', 'J', 'V', 'S'].map(d => (
+            {['S', 'M', 'T', 'W', 'Th', 'F', 'Sa'].map(d => (
               <div key={d} className="cal-weekday">{d}</div>
             ))}
             {days.map((day, i) => {
@@ -124,7 +132,6 @@ export default function CalendarPage() {
           </div>
         </div>
 
-        {/* Nota del día */}
         <div className="note-panel">
           <h3 className="note-date">
             {new Date(selectedDate + 'T12:00:00').toLocaleDateString('en', {

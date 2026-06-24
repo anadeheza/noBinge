@@ -10,9 +10,29 @@
     align-items: center;
 }
 
+.home-btn {
+    text-decoration: none;
+    position: fixed;
+    left: 100px;
+    top: 20px;
+    font-size: 20px;
+    color: #492b00;
+    border: 1px solid #492b00;
+    border-radius: 50%;
+    padding-bottom: 7px;
+    padding-left: 7px;
+    padding-right: 6.5px;
+    transform: all 0.3s ease;
+    box-shadow: 1px 1px 1px #492b00;
+}
+
+.home-btn:hover {
+    transform: scale(1.05);
+}
+
 .calendar-title {
     font-size: 24px;
-    color: #e3b96b;
+    color: #492b00;
     margin-bottom: 24px;
     font-weight: 700;
 }
@@ -141,7 +161,9 @@
 
 .mood-options {
     display: flex;
-    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     margin-bottom: 5px;
 }
 
