@@ -6,7 +6,10 @@ export interface AuthRequest extends Request {
 }
 
 export const authMiddleware = (req: AuthRequest, res: Response, next: NextFunction): void => {
-    const token = req.headers.authorization?.split('')[1]
+    const authHeader = req.headers.authorization
+    console.log('Auth header:', authHeader)
+    const token = authHeader?.split(' ')[1]
+    console.log('JWT_SECRET exists:', !!process.env.JWT_SECRET)
 
     if(!token) {
         res.status(401).json({ error: 'Token required'})
@@ -14,10 +17,11 @@ export const authMiddleware = (req: AuthRequest, res: Response, next: NextFuncti
     }
 
     try {
-        const verif = jwt.verify(token, process.env.JWT_SECRET!) as { userId: number }
-        req.userId = verif.userId
-        next()
-    } catch {
-        res.status(401).json({ error: 'Invalid Token' })
-    }
+    const verif = jwt.verify(token, process.env.JWT_SECRET!) as { userId: number }
+    req.userId = verif.userId
+    next()
+} catch (err) {
+    console.log('JWT error:', err) 
+    res.status(401).json({ error: 'Invalid Token' })
+}
 }
