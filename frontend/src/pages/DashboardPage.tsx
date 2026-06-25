@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useAuth } from '../context/AuthContext'
 import { Link } from 'react-router-dom'
+import MusicPlayer from './MusicPage'
 import '../styles/main.css'
 
 export default function DashboardPage() {
@@ -45,7 +46,7 @@ export default function DashboardPage() {
           <button className="close-drawer-btn" onClick={() => setIsMusicOpen(false)}>×</button>
         </div>
         <div className="drawer-content">
-          <p>Music player</p>
+          <MusicPlayer />
         </div>
       </div>
     </div>

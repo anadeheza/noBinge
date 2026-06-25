@@ -1,0 +1,124 @@
+.music-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    font-family: inherit;
+}
+
+.player-disk-wrapper {
+    width: 160px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.player-disk {
+    width: 100%;
+    height: 100%;
+    background: #111;
+    border-radius: 50%;
+    border: 8px solid #222;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.player-disk-center {
+    width: 40px;
+    height: 40px;
+    background: #8d6e63;
+    border-radius: 50%;
+    border: 4px solid #f4ebd0;
+}
+
+.player-disk.playing {
+    animation: spinRecord 3s linear infinite;
+}
+
+@keyframes spinRecord {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.track-info {
+    text-align: center;
+    width: 100%;
+}
+
+.track-name {
+    font-family: "Press Start 2P", monospace;
+    font-size: 11px;
+    color: #3e2723;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.track-artist {
+    font-size: 13px;
+    color: #5d4037;
+    font-style: italic;
+}
+
+.progress-container {
+    width: 100%;
+}
+
+.progress-bar {
+    width: 100%;
+    accent-color: #2e4f3a;
+    cursor: pointer;
+    background: #dfd3c3;
+    height: 6px;
+    border-radius: 3px;
+}
+
+.time-stamps {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #5d4037;
+    margin-top: 6px;
+}
+
+.player-controls {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.control-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #3e2723;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.control-btn:hover {
+    transform: scale(1.1);
+}
+
+.play-btn {
+    font-size: 32px;
+    background-color: #2e4f3a;
+    color: #f4ebd0;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #3e2723;
+    box-shadow: -2px 3px 0px #3e2723;
+}
+
+.play-btn:hover {
+    background-color: #396349;
+}

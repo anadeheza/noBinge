@@ -1,12 +1,12 @@
 .mp { 
-    padding: 32px;
+    padding: clamp(16px, 5vw, 32px);
     display: flex; 
     flex-direction: column; 
     align-items: center; 
 }
 
 .mp-title { 
-    font-size: 24px; 
+    font-size: clamp(18px, 4vw, 24px); 
     color: #492b00;
     margin-bottom: 24px; 
     font-weight: 700; 
@@ -14,26 +14,26 @@
 
 .mp-layout { 
     display: flex; 
-    gap: 32px; 
+    gap: clamp(16px, 4vw, 32px); 
     align-items: flex-start; 
     flex-wrap: wrap; 
-    max-width: 900px; 
-    width: 100%; 
+    width: min(900px, 100%); 
+    justify-content: center;
 }
 
 .mp-left { 
     background: white; 
     padding: 20px; 
-    min-width: 260px; 
-    flex-shrink: 0; 
+    flex: 1 1 260px; 
+    min-width: min(260px, 100%); 
     border: 0.5px solid #492300; 
 }
 
 .mp-right { 
-    flex: 1; 
+    flex: 1 1 280px; 
     background: white; 
-    padding: 25px; 
-    min-width: 280px; 
+    padding: clamp(16px, 5vw, 25px); 
+    min-width: min(280px, 100%); 
     border: 0.5px solid #492300; 
 }
 
@@ -92,6 +92,8 @@
     border-bottom: 0.5px dashed #c4b4a8; 
     font-size: 14px; 
     color: #555; 
+    flex-wrap: wrap;
+    gap: 4px;
 }
 
 .summary-row:last-child { 
@@ -116,6 +118,7 @@
 
 .water-row { 
     display: flex; 
+    flex-wrap: wrap;
     gap: 8px; 
     align-items: center; 
     margin-bottom: 18px; 
@@ -144,7 +147,8 @@
 
 
 .glass { 
-    font-size: 18px; opacity: 0.3; 
+    font-size: clamp(16px, 4vw, 18px); 
+    opacity: 0.3; 
 }
 
 .glass.filled { 
