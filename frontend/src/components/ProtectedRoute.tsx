@@ -5,7 +5,7 @@ import { useAuth } from '../context/AuthContext'
 export default function ProtectedRoute({ children }: { children: ReactNode }) {
   const { user, isLoading } = useAuth()
 
-  if (isLoading) return null // or a spinner component if you have one
+  if (isLoading) return null
   if (!user) return <Navigate to="/login" replace />
   return <>{children}</>
 }

@@ -49,6 +49,12 @@ export default function MealsPage() {
   };
 
   const handleSaveMeal = () => {
+    
+    if (!meals[activeMeal].food.trim()) {
+      alert(`Please enter what you ate for ${mealConfig[activeMeal].label} before saving.`);
+      return; 
+    }
+
     setMeals((prev) => ({
       ...prev,
       [activeMeal]: {

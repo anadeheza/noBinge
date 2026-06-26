@@ -59,8 +59,7 @@ export default function MusicPlayer() {
       </div>
 
       <div className="track-info">
-        <div className="track-name">Lo-Fi Morning Chores</div>
-        <div className="track-artist">Pixel Dreams Cafe</div>
+        <div className="track-name">Music Tack 1</div>
       </div>
 
       <div className="progress-container">

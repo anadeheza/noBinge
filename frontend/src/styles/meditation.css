@@ -1,0 +1,50 @@
+.breathing-container {
+    width: 260px;
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.breathing-circle {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background-color: #2e4f3a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(46, 79, 58, 0.2);
+    transition: transform 4s linear, background-color 1s ease;
+    border: 4px solid #3e2723;
+}
+
+.breathing-circle.inhale {
+    transform: scale(1.7);
+    background-color: #2e4f3a;
+}
+
+.breathing-circle.hold {
+    transform: scale(1.7);
+    background-color: #526e52;
+}
+
+.breathing-circle.exhale {
+    transform: scale(1);
+    background-color: #8d6e63;
+}
+
+.breathing-text {
+    font-family: "Press Start 2P", monospace;
+    font-size: 11px;
+    color: #f4ebd0;
+    margin-bottom: 8px;
+}
+
+.breathing-timer {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f4ebd0;
+}
