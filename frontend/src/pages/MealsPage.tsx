@@ -18,14 +18,14 @@ interface TrackerState {
 type MealKey = keyof TrackerState;
 
 export default function MealsPage() {
-  const [waterGlasses, setWaterGlasses] = useState<number>(3);
+  const [waterGlasses, setWaterGlasses] = useState<number>(0);
   const maxGlasses = 8;
 
   const [activeMeal, setActiveMeal] = useState<MealKey>('breakfast');
   const [saving, setSaving] = useState(false);
 
   const [meals, setMeals] = useState<TrackerState>({
-    breakfast: { food: 'oatmeal with berries, green tea', feeling: '', saved: true },
+    breakfast: { food: 'greek yoghurt with peanut butter...', feeling: '', saved: true },
     lunch: { food: '', feeling: '', saved: false },
     dinner: { food: '', feeling: '', saved: false },
     snacks: { food: '', feeling: '', saved: false },
@@ -135,7 +135,7 @@ export default function MealsPage() {
             <div className="mp-section-label">What did you eat?</div>
             <textarea
               className="meal-input"
-              placeholder="e.g. oatmeal with berries, coffee..."
+              placeholder="avocado toast, coffee..."
               value={meals[activeMeal].food}
               onChange={(e) => handleInputChange('food', e.target.value)}
               rows={3}

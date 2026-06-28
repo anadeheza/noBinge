@@ -22,7 +22,6 @@ body {
 
 #root {
     font-family: "Press Start 2P", system-ui;
-
     height: 100%;
     width: 100%;
 }
@@ -32,13 +31,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 16px;
     margin: 0;
 }
 
 .auth-card {
     background: #ffffffd7;
-    padding: 2.5rem;
+    padding: 40px;
     width: 100%;
     max-width: 420px;
     backdrop-filter: blur(10px);
@@ -46,43 +45,42 @@ body {
 
 .auth-header {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 32px;
 }
 
 .auth-logo {
     font-family: "Press Start 2P", system-ui;
-
-    font-size: 1.8rem;
+    font-size: 30px;
     color: #8e631e;
     font-weight: 700;
 }
 
 .auth-form h2 {
     font-family: "Press Start 2P", system-ui;
-    font-size: 1.3rem;
+    font-size: 20px;
     color: #774c2b;
-    margin-bottom: 1.5rem;
+    margin-bottom: 24px;
     text-align: center;
 }
 
 .form-group {
-    margin-bottom: 1.2rem;
+    margin-bottom: 18px;
 }
 
 .form-group label {
     display: block;
-    font-size: 0.85rem;
+    font-size: 15px;
     color: #b18d75;
-    margin-bottom: 0.4rem;
+    margin-bottom: 14px;
     font-weight: 500;
 }
 
 .form-group input {
     width: 100%;
-    padding: 0.75rem 1rem;
+    padding: 14px 16px;
     border: 1.5px solid #ddd;
-    font-size: 0.95rem;
-    transition: border-color 0.2s;
+    font-size: 16px;
+    transition: all 0.2s ease;
     outline: none;
     background: #906d547c;
     color: #774c2b;
@@ -94,15 +92,15 @@ body {
 
 .auth-btn {
     width: 100%;
-    padding: 0.85rem;
+    padding: 15px;
     background: #a87c34;
     color: white;
     border: none;
-    font-size: 1rem;
+    font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    margin-top: 0.5rem;
-    transition: background 0.2s;
+    margin-top: 8px;
+    transition: all 0.2s ease;
 }
 
 .auth-btn:hover:not(:disabled) {
@@ -118,16 +116,16 @@ body {
 .auth-error {
     background: #fdecea;
     color: #c66728;
-    padding: 0.75rem 1rem;
-    font-size: 0.88rem;
-    margin-bottom: 1rem;
+    padding: 14px 16px;
+    font-size: 15px;
+    margin-bottom: 16px;
     border-left: 3px solid #ef9f50;
 }
 
 .auth-switch {
     text-align: center;
-    margin-top: 1.5rem;
-    font-size: 0.9rem;
+    margin-top: 24px;
+    font-size: 15px;
     color: #666;
 }
 

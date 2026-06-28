@@ -22,7 +22,7 @@
     background: #111;
     border-radius: 50%;
     border: 8px solid #222;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    box-shadow: 1px 1px 1px #3e2723;
     position: relative;
     display: flex;
     align-items: center;

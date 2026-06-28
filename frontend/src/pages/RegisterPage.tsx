@@ -19,7 +19,7 @@ export default function RegisterPage() {
     e.preventDefault()
     setError('')
     if (password.length < 6) {
-      setError('Password must be at least 6 characters long')
+      setError('Password must be at least 6 characters long :(')
       return
     }
     setLoading(true)
@@ -77,7 +77,7 @@ export default function RegisterPage() {
               type="password"
               value={password}
               onChange={e => setPassword(e.target.value)}
-              placeholder=" ****** "
+              placeholder=" SuperSecretPassword "
               required
             />
           </div>
@@ -88,7 +88,7 @@ export default function RegisterPage() {
         </form>
 
         <p className="auth-switch">
-          Already have an account? <Link to="/login">Log in</Link>
+          Already have an account? <Link to="/login">Log in!</Link>
         </p>
       </div>
     </div>

@@ -14,7 +14,7 @@ export const api = {
     })
 
     const data = await res.json()
-    if (!res.ok) throw new Error(data.error || 'Error desconocido')
+    if (!res.ok) throw new Error(data.error || 'Error')
     return data
   },
 
@@ -23,7 +23,7 @@ export const api = {
       headers: { Authorization: `Bearer ${getToken()}` },
     })
     const data = await res.json()
-    if (!res.ok) throw new Error(data.error || 'Error desconocido')
+    if (!res.ok) throw new Error(data.error || 'Error')
     return data
   },
 }

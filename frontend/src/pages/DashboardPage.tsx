@@ -13,7 +13,7 @@ export default function DashboardPage() {
       <header className='dash-header'>
         <div className='brand'>
           <h1 className='dash-title'>𖧧 Welcome, {user?.name}</h1>
-          <p className='dash-subtitle'>Your safe place to recover in peace</p>
+          <p className='dash-subtitle'>Your safe place to recover in peace...</p>
         </div>
         <button className='logout-btn' onClick={logout}>
           Log out
@@ -51,7 +51,7 @@ export default function DashboardPage() {
       </div>
 
       <footer>
-        <div className="footer content">⚠︎ This website does not mean to replace medical advice, if you're struggling with mental health or an eating disorder, accept the help from the people that love you and contact a health center, stay safe ♡</div>
+        <div className="footer content">⚠︎ This website does not mean to replace any medical advice, if you're struggling with mental health or an eating disorder, accept the help from the people that love you and contact a health center, stay safe ♡</div>
         
       </footer>
     </div>

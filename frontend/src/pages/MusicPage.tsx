@@ -2,9 +2,9 @@ import { useState, useRef } from 'react'
 import '../styles/music-player.css'
 
 const TRACKS = [
-  { name: 'Music Track 1', src: '/audio/track1.mp3' },
-  { name: 'Music Track 2', src: '/audio/track2.mp3' },
-  { name: 'Music Track 3', src: '/audio/track3.mp3' }
+  { name: 'Track 1', src: '/audio/track1.mp3' },
+  { name: 'Track 2', src: '/audio/track2.mp3' },
+  { name: 'Track 3', src: '/audio/track3.mp3' }
 ]
 
 export default function MusicPlayer() {

@@ -6,12 +6,7 @@ export const upsertNote = async (req: AuthRequest, res: Response): Promise<void>
   const { date, content, mood } = req.body
 
   if (!date || !content || mood === undefined) {
-    res.status(400).json({ error: 'Faltan campos requeridos' })
-    return
-  }
-
-  if (mood < 1 || mood > 5) {
-    res.status(400).json({ error: 'El estado de ánimo debe ser entre 1 y 5' })
+    res.status(400).json({ error: 'Complete all fields!' })
     return
   }
 
@@ -23,7 +18,7 @@ export const upsertNote = async (req: AuthRequest, res: Response): Promise<void>
     })
     res.json(note)
   } catch {
-    res.status(500).json({ error: 'Error interno del servidor' })
+    res.status(500).json({ error: 'Server error :(' })
   }
 }
 
@@ -36,7 +31,7 @@ export const getNoteByDate = async (req: AuthRequest, res: Response): Promise<vo
     })
     res.json(note ?? null)
   } catch {
-    res.status(500).json({ error: 'Error interno del servidor' })
+    res.status(500).json({ error: 'Server error :(' })
   }
 }
 
@@ -55,6 +50,6 @@ export const getNotesByMonth = async (req: AuthRequest, res: Response): Promise<
     })
     res.json(notes)
   } catch {
-    res.status(500).json({ error: 'Error interno del servidor' })
+    res.status(500).json({ error: 'Server error :(' })
   }
 }
