@@ -28,7 +28,7 @@ export default function CalendarPage() {
   const [selectedDate, setSelectedDate] = useState(toDateString(today))
   const [currentMonth, setCurrentMonth] = useState(today.getMonth() + 1)
   const [currentYear, setCurrentYear] = useState(today.getFullYear())
-  const [note, setNote] = useState<DailyNote | null>(null)
+  const [setNote] = useState<DailyNote | null>(null)
   const [content, setContent] = useState('')
   const [mood, setMood] = useState(3)
   const [monthSummary, setMonthSummary] = useState<MonthSummary[]>([])
