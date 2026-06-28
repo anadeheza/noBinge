@@ -10,6 +10,11 @@
     color: #492b00;
     margin-bottom: 24px; 
     font-weight: 700; 
+    margin-top: 0;
+}
+
+.mp-title-emoji {
+    font-size: clamp(20px, 5vw, 35px);
 }
 
 .mp-layout { 
@@ -114,6 +119,11 @@
     font-size: 16px; 
     font-weight: 600; 
     cursor: pointer; 
+}
+
+.save-btn:disabled { 
+    opacity: 0.95;
+    cursor: not-allowed; 
 }
 
 .water-row { 

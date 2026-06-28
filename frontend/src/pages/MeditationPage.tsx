@@ -35,7 +35,7 @@ export default function MeditationPage() {
 
   return (
     <div className="mp">
-      <h1 className="mp-title">𖧧 Breathing Space</h1>
+      <h1 className="mp-title">Breathing Space 𖧧</h1>
       <Link to="/dashboard" className="home-btn" aria-label="Home">
         🏠︎
       </Link>
@@ -51,7 +51,7 @@ export default function MeditationPage() {
           </div>
 
           <p style={{ color: '#5d4037', fontStyle: 'italic', marginTop: '30px', textAlign: 'center', fontSize: '14px' }}>
-            Clear your mind and follow the circle's rhythm.
+            Clear your mind and breath mindfully.
           </p>
 
         </div>

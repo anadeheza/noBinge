@@ -49,6 +49,11 @@ export default function DashboardPage() {
           <MusicPlayer />
         </div>
       </div>
+
+      <footer>
+        <div className="footer content">⚠︎ This website does not mean to replace medical advice, if you're struggling with mental health or an eating disorder, accept the help from the people that love you and contact a health center, stay safe ♡</div>
+        
+      </footer>
     </div>
   )
 }

@@ -22,6 +22,7 @@ export default function MealsPage() {
   const maxGlasses = 8;
 
   const [activeMeal, setActiveMeal] = useState<MealKey>('breakfast');
+  const [saving, setSaving] = useState(false);
 
   const [meals, setMeals] = useState<TrackerState>({
     breakfast: { food: 'oatmeal with berries, green tea', feeling: '', saved: true },
@@ -48,21 +49,22 @@ export default function MealsPage() {
     }));
   };
 
-  const handleSaveMeal = () => {
-    
-    if (!meals[activeMeal].food.trim()) {
-      alert(`Please enter what you ate for ${mealConfig[activeMeal].label} before saving.`);
-      return; 
-    }
+  const handleSaveMeal = async () => {
+    if (!meals[activeMeal].food.trim()) return;
 
-    setMeals((prev) => ({
-      ...prev,
-      [activeMeal]: {
-        ...prev[activeMeal],
-        saved: true,
-      },
-    }));
-    alert(`${mealConfig[activeMeal].label} saved successfully!`);
+    setSaving(true);
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 600));
+      setMeals((prev) => ({
+        ...prev,
+        [activeMeal]: {
+          ...prev[activeMeal],
+          saved: true,
+        },
+      }));
+    } finally {
+      setSaving(false);
+    }
   };
 
   const handleWaterClick = (index: number) => {
@@ -75,7 +77,7 @@ export default function MealsPage() {
 
   return (
     <div className="mp">
-      <h2 className="mp-title">Meals 🍽️</h2>
+      <h2 className="mp-title">Meals <span className='mp-title-emoji'>𓐐𓎩</span></h2>
       <Link to="/dashboard" className="home-btn" aria-label="Home">
         🏠︎
       </Link>
@@ -103,7 +105,7 @@ export default function MealsPage() {
             );
           })}
 
-          <div style={{ marginTop: '24px' }}>
+          <div style={{ marginTop: '24px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
             <div className="mp-section-label">Water intake</div>
             <div className="water-row">
               {Array.from({ length: maxGlasses }).map((_, i) => {
@@ -151,8 +153,12 @@ export default function MealsPage() {
             />
           </div>
           
-          <button className="save-btn" onClick={handleSaveMeal}>
-            {meals[activeMeal].saved ? 'Saved ✓' : 'Save meal'}
+          <button 
+            className="save-btn" 
+            onClick={handleSaveMeal}
+            disabled={saving || !meals[activeMeal].food.trim()}
+          >
+            {saving ? 'Saving...' : meals[activeMeal].saved ? 'Saved ✓' : 'Save meal'}
           </button>
         </div>
 

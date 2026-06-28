@@ -1,3 +1,5 @@
+
+
 .breathing-container {
     width: 260px;
     height: 260px;
@@ -5,6 +7,14 @@
     align-items: center;
     justify-content: center;
     margin: 20px 0;
+}
+
+.mp-title {
+    font-size: clamp(18px, 4vw, 24px);
+    color: #492b00;
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-weight: 700;
 }
 
 .breathing-circle {

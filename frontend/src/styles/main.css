@@ -6,7 +6,7 @@ body {
 }
 
 .dashboard-wrapper {
-    padding: clamp(16px, 5vw, 32px);
+    padding-top: clamp(16px, 5vw, 32px);
     margin: 0 auto;
     font-family: system-ui, sans-serif;
     color: #3e2723;
@@ -108,7 +108,7 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: #00000067;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease;
@@ -131,7 +131,7 @@ body {
     border-left: 6px solid #3e2723;
     box-shadow: -10px 0px 0px rgba(0, 0, 0, 0.15);
     z-index: 1000;
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.3s ease;
     display: flex;
     flex-direction: column;
 }
@@ -173,12 +173,27 @@ body {
     font-size: 14px;
 }
 
-@media (max-width: 600px) {
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: clamp(5px, 0.5vw, 20px);
+    border-top: 1px solid #2e4f3a;
+    font-size: 15px;
+    background-color: #dfd3c389;
+    backdrop-filter: blur(5px);
+}
+
+@media (max-width: 1000px) {
     body {
         background: #dfd3c3;
     }
     .widget-grid {
         grid-template-columns: 1fr;
         gap: 32px;
+    }
+    .dash-header{
+        width: 100vw;
     }
 }
