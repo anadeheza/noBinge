@@ -1,4 +1,4 @@
-const BASE_URL = "https://binge-awareness-backend.onrender.com";
+const BASE_URL = "https://binge-awareness-backend.onrender.com/api";
 
 const getToken = () => localStorage.getItem('token')
 
