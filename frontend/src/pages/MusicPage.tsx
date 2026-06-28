@@ -1,12 +1,21 @@
 import { useState, useRef } from 'react'
 import '../styles/music-player.css'
 
+const TRACKS = [
+  { name: 'Music Track 1', src: '/audio/track1.mp3' },
+  { name: 'Music Track 2', src: '/audio/track2.mp3' },
+  { name: 'Music Track 3', src: '/audio/track3.mp3' }
+]
+
 export default function MusicPlayer() {
+  const [currentTrackIndex, setCurrentTrackIndex] = useState(0)
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentTime, setCurrentTime] = useState(0)
   const [duration, setDuration] = useState(0)
 
   const audioRef = useRef<HTMLAudioElement | null>(null)
+
+  const currentTrack = TRACKS[currentTrackIndex]
 
   const formatTime = (secs: number) => {
     const minutes = Math.floor(secs / 60)
@@ -16,7 +25,6 @@ export default function MusicPlayer() {
 
   const togglePlay = () => {
     if (!audioRef.current) return
-
     if (isPlaying) {
       audioRef.current.pause()
     } else {
@@ -34,6 +42,9 @@ export default function MusicPlayer() {
   const handleLoadedMetadata = () => {
     if (audioRef.current) {
       setDuration(audioRef.current.duration)
+      if (isPlaying) {
+        audioRef.current.play().catch(() => {})
+      }
     }
   }
 
@@ -45,9 +56,21 @@ export default function MusicPlayer() {
     }
   }
 
+  const handleNext = () => {
+    setCurrentTrackIndex((prev) => (prev + 1) % TRACKS.length)
+  }
+
+  const handlePrev = () => {
+    setCurrentTrackIndex((prev) => (prev - 1 + TRACKS.length) % TRACKS.length)
+  }
+
   const handleAudioEnded = () => {
-    setIsPlaying(false)
-    setCurrentTime(0)
+    if (currentTrackIndex < TRACKS.length - 1) {
+      handleNext()
+    } else {
+      setIsPlaying(false)
+      setCurrentTime(0)
+    }
   }
 
   return (
@@ -59,7 +82,7 @@ export default function MusicPlayer() {
       </div>
 
       <div className="track-info">
-        <div className="track-name">Music Tack 1</div>
+        <div className="track-name">{currentTrack.name}</div>
       </div>
 
       <div className="progress-container">
@@ -78,16 +101,17 @@ export default function MusicPlayer() {
       </div>
 
       <div className="player-controls">
-        <button className="control-btn">⏮</button>
+        <button className="control-btn" onClick={handlePrev}>⏮</button>
         <button className="control-btn play-btn" onClick={togglePlay}>
           {isPlaying ? '⏸' : '▶'}
         </button>
-        <button className="control-btn">⏭</button>
+        <button className="control-btn" onClick={handleNext}>⏭</button>
       </div>
 
       <audio
+        key={currentTrackIndex}
         ref={audioRef}
-        src="/audio/lofi-track.mp3"
+        src={currentTrack.src}
         onTimeUpdate={handleTimeUpdate}
         onLoadedMetadata={handleLoadedMetadata}
         onEnded={handleAudioEnded}
