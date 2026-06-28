@@ -2,6 +2,8 @@ const BASE_URL = 'http://localhost:3001/api'
 
 const getToken = () => localStorage.getItem('token')
 
+const API_BASE_URL = "https://binge-awareness-backend.onrender.com";
+
 export const api = {
   post: async (path: string, body: unknown, auth = false) => {
     const headers: Record<string, string> = { 'Content-Type': 'application/json' }
