@@ -1,4 +1,7 @@
 # noBinge
+A minimalist website made for raising awareness on BED, it is ment for users that have acknowledged that they have an ed and are looking for a space where they are not judged and they can be in peace with themselves.
+
+![dashboard](image.png)
 
 ## Why this?
 I have been struggling with EDs for years now, first with anorexia, then bed, and well, i just thought that if i had found an app like this, perhaps, i could've got away from that dark place earlier.
